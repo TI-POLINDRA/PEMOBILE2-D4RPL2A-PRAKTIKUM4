@@ -37,7 +37,7 @@ jobs:
         run: mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/app-release-${{ env.VERSION_NAME }}.apk
 
       - name: Upload APK
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: app-release-${{ env.VERSION_NAME }}.apk
           path: build/app/outputs/flutter-apk/app-release-${{ env.VERSION_NAME }}.apk
