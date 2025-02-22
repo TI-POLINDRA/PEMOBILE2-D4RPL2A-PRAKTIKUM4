@@ -56,3 +56,9 @@
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 - [online documentation](https://docs.flutter.dev/)
+
+## Desain Figma
+
+![Deskripsi Gambar](.github/images/thumbnail.png)
+
+[Link Figma](https://www.figma.com/design/DpkE3n2S7sUgA8LKqVUlsK/Coinpay-Fintech-Finance-Mobile-App-UI-kit-(Community)-(Community)?node-id=4-4&t=AiRuAltqrzlhVh7k-1)

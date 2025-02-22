@@ -1,0 +1,51 @@
+name: Flutter Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.7.0' # Ganti dengan versi Flutter yang Anda gunakan
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Extract version number
+        id: extract_version
+        run: |
+          VERSION_NAME=$(grep '^version:' pubspec.yaml | sed 's/version: //')
+          echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_ENV
+
+      - name: Rename APK
+        run: mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/app-release-${{ env.VERSION_NAME }}.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-release-${{ env.VERSION_NAME }}.apk
+          path: build/app/outputs/flutter-apk/app-release-${{ env.VERSION_NAME }}.apk
+
+      - name: Send APK to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          pip install requests
+          python .github/send_telegram.py
