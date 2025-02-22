@@ -19,7 +19,11 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.7.0' # Ganti dengan versi Flutter yang Anda gunakan
+          flutter-version: '3.7.0' # Sesuaikan dengan versi Flutter yang diinginkan
+          cache: true
+
+      - name: Check Flutter & Dart version
+        run: flutter doctor -v
 
       - name: Install dependencies
         run: flutter pub get
