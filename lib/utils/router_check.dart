@@ -24,8 +24,12 @@ class _RouterCheckState extends State<RouterCheck> {
               TextField(
                 controller: _controller,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
                   hintText: 'Masukkan Alamat Routing',
+                  helperText: 'Contoh: /login',
+                  icon: const Icon(Icons.route),
                 ),
               ),
               SizedBox(height: 20.h),
