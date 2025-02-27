@@ -28,7 +28,7 @@ class _RouterCheckState extends State<RouterCheck> {
                     borderRadius: BorderRadius.circular(10.r),
                   ),
                   hintText: 'Masukkan Alamat Routing',
-                  helperText: 'Contoh: /login',
+                  helperText: 'Contoh: /login atau /otp',
                   icon: const Icon(Icons.route),
                 ),
               ),

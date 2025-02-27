@@ -30,7 +30,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
             child: Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.grey.shade200,
+                color: const Color.fromARGB(255, 255, 255, 255),
               ),
               child: Icon(Icons.chevron_left, color: Colors.black),
             ),
@@ -39,24 +39,32 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(1.0),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Container(
-              margin: EdgeInsets.only(left: 8),
-              width: 40,
-              height: 3.0,
-              color: Color.fromRGBO(48, 79, 255, 1),
-            ),
+          preferredSize: Size.fromHeight(3.0), 
+          child: Stack(
+            children: [
+              
+              Container(
+                width: double.infinity,
+                height: 3.0,
+                color: Colors.grey[300], 
+              ),
+             
+              Container(
+                width: 50, // Sesuaikan panjang garis biru
+                height: 3.0,
+                color: Color.fromRGBO(48, 79, 255, 1),
+              ),
+            ],
           ),
         ),
       ),
+      backgroundColor: Colors.white, // Warna background disamakan dengan AppBar
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 20), // Naikkan teks lebih ke atas
+            SizedBox(height: 15),
             Align(
               alignment: Alignment.centerLeft,
               child: Column(
@@ -73,7 +81,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    "We sent 6 digits code to +881 1720 84 57 57",
+                    "We sent 6 digits code to +8811720 84 57 57",
                     style: TextStyle(fontSize: 15, color: Colors.grey),
                   ),
                 ],
@@ -82,7 +90,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
             SizedBox(height: 24),
             Center(
               child: SizedBox(
-                width: 220, // Menyesuaikan lebar agar lebih kecil ke tengah
+                width: 220,
                 child: PinCodeTextField(
                   appContext: context,
                   length: 6,
@@ -95,8 +103,8 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                   ),
                   pinTheme: PinTheme(
                     shape: PinCodeFieldShape.underline,
-                    fieldHeight: 60, // Lebih kecil
-                    fieldWidth: 30,  // Lebih kecil
+                    fieldHeight: 60,
+                    fieldWidth: 30,
                     inactiveColor: Colors.grey,
                     activeColor: Color.fromRGBO(48, 79, 255, 1),
                     selectedColor: Color.fromRGBO(48, 79, 255, 1),
