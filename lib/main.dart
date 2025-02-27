@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pemobile2_d4rpl3a_praktikum4/screens/login_screen.dart';
 import 'package:pemobile2_d4rpl3a_praktikum4/utils/router_check.dart';
+import 'package:pemobile2_d4rpl3a_praktikum4/screens/select_purpose.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,8 +25,9 @@ class MyApp extends StatelessWidget {
           ),
           initialRoute: '/',
           routes: {
-            '/': (context) => const RouterCheck(),
-            '/login': (context) => const LoginScreen(),
+            '/': (context) => RouterCheck(),
+            '/login': (context) => LoginScreen(),
+            '/select-purpose': (context) => SelectPurposePage(),
           },
         );
       },
