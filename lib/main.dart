@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pemobile2_d4rpl3a_praktikum4/screens/login_screen.dart';
-import 'package:pemobile2_d4rpl3a_praktikum4/utils/router_check.dart';
+import 'package:pemobile2_d4rpl3a_praktikum4/screens/error_404_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,23 +10,40 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context, child) {
-        return MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Error 404 Page',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Home Page")),
+      body: Center(
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blue,
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           ),
-          initialRoute: '/',
-          routes: {
-            '/': (context) => const RouterCheck(),
-            '/login': (context) => const LoginScreen(),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Error404Page()),
+            );
           },
-        );
-      },
+          child: const Text("Go to 404 Page"),
+        ),
+      ),
     );
   }
 }
