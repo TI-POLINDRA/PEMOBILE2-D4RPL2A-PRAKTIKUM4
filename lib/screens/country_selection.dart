@@ -39,7 +39,6 @@ class _CountrySelectionScreenState extends State<CountrySelectionScreen> {
                 },
               ),
             ),
-            // Garis menyatu antara biru dan abu-abu
             Positioned(
               bottom: 0,
               left: 0,
@@ -47,14 +46,14 @@ class _CountrySelectionScreenState extends State<CountrySelectionScreen> {
               child: Row(
                 children: [
                   Container(
-                    width: 55, // Lebar yang sama dengan leading IconButton
-                    height: 4, // Ketebalan garis biru
+                    width: 55,
+                    height: 4,
                     color:
                         const Color.fromARGB(255, 15, 106, 181), // Warna biru
                   ),
                   Expanded(
                     child: Container(
-                      height: 4, // Ketebalan garis abu-abu
+                      height: 4,
                       color: Colors.grey.shade300,
                     ),
                   ),
