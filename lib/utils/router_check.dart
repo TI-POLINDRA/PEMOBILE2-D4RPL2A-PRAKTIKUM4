@@ -35,10 +35,16 @@ class _RouterCheckState extends State<RouterCheck> {
               SizedBox(height: 20.h),
               ElevatedButton(
                 onPressed: () {
-                  String route = _controller.text;
+                  String route = _controller.text
+                      .trim(); // Hilangkan spasi kosong atau karakter tambahan
                   if (route.isNotEmpty) {
-                    print('Goto Route : ${route}');
+                    if (!route.startsWith('/')) {
+                      route = '/$route'; // Tambahkan '/' jika tidak ada di awal
+                    }
+                    print('Goto Route : $route');
                     Navigator.pushNamed(context, route);
+                  } else {
+                    print('Rute tidak boleh kosong');
                   }
                 },
                 child: const Text("Go"),
