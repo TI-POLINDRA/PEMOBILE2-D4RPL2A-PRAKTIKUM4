@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pemobile2_d4rpl3a_praktikum4/screens/login_screen.dart';
 import 'package:pemobile2_d4rpl3a_praktikum4/screens/payment_secreen.dart';
 import 'package:pemobile2_d4rpl3a_praktikum4/screens/payment_request_screen.dart';
+import 'package:pemobile2_d4rpl3a_praktikum4/screens/choose_recipient_screen.dart';
 import 'package:pemobile2_d4rpl3a_praktikum4/utils/router_check.dart';
 
 void main() {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
             '/login': (context) => const LoginScreen(),
             '/payment': (context) => const PaymentScreen(),
             '/payment_request': (context) => const PaymentRequestScreen(),
+            '/choose_recipient': (context) => const ChooseRecipientScreen(),
           },
         );
       },
