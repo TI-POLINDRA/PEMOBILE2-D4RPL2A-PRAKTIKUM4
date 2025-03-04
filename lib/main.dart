@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pemobile2_d4rpl3a_praktikum4/screens/login_screen.dart';
 import 'package:pemobile2_d4rpl3a_praktikum4/utils/router_check.dart';
-
+import 'package:pemobile2_d4rpl3a_praktikum4/screens/support_screen.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
           routes: {
             '/': (context) => const RouterCheck(),
             '/login': (context) => const LoginScreen(),
+            '/support': (context) => ChatScreen(),
           },
         );
       },
