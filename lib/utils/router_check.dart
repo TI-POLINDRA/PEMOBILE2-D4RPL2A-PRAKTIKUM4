@@ -37,7 +37,7 @@ class _RouterCheckState extends State<RouterCheck> {
                 onPressed: () {
                   String route = _controller.text;
                   if (route.isNotEmpty) {
-                    print('Goto Route : ${route}');
+                    print('Goto Route : $route');
                     Navigator.pushNamed(context, route);
                   }
                 },
